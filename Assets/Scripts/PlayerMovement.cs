@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody playerRb;
+    [SerializeField] float upwardsThrust = 50f;
     
     // Start is called before the first frame update
     void Start()
@@ -15,20 +16,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveZ = 1, moveX = 1;
-        GetPlayerThrust(moveZ);
-        GetPlayerRotation(moveX);
+        GetPlayerThrust();
+        GetPlayerRotation();
     }
 
-    void GetPlayerThrust(float moveZ)
+    void GetPlayerThrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            playerRb.AddRelativeForce(Vector3.up);
+            playerRb.AddRelativeForce(Vector3.up * upwardsThrust * Time.deltaTime);
         }  
     }
 
-    void GetPlayerRotation(float moveX)
+    void GetPlayerRotation()
     {
         if (Input.GetKey(KeyCode.A))
         {
