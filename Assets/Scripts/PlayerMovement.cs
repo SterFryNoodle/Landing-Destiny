@@ -33,11 +33,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
+            playerRb.freezeRotation = true; //freezing rotation to manually rotate.
             transform.Rotate(rotationThrust * Time.deltaTime * Vector3.forward);
+            playerRb.freezeRotation = false; //unfreeze so unity physics takes over.
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            playerRb.freezeRotation = true;
             transform.Rotate(rotationThrust * Time.deltaTime * Vector3.back);
+            playerRb.freezeRotation = false;
         }
     }
 }
