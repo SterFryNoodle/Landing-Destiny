@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody playerRb;
     [SerializeField] float upwardsThrust = 50f;
+    [SerializeField] float rotationThrust = 1.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            playerRb.AddRelativeForce(Vector3.up * upwardsThrust * Time.deltaTime);
+            playerRb.AddRelativeForce(Time.deltaTime * upwardsThrust * Vector3.up);
         }  
     }
 
@@ -32,11 +33,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            //make player rotate left
+            transform.Rotate(rotationThrust * Time.deltaTime * Vector3.forward);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            //make player rotate right
+            transform.Rotate(rotationThrust * Time.deltaTime * Vector3.back);
         }
     }
 }
