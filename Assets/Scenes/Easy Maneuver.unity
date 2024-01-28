@@ -303,8 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb705dcb6ae9e8a4a84db1ae25cbb508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 1
-  delayLevelLoad: 2
+  delayTime: 2
+  delayLevelLoad: 4
   shipExplosion: {fileID: 8300000, guid: ed44b4e504eca084eb89ad6bf7accb2d, type: 3}
   shipLanding: {fileID: 8300000, guid: b62b119aab16a1e4880147461b2c56ff, type: 3}
 --- !u!1 &963194225
