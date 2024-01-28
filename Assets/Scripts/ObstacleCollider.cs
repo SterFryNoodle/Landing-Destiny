@@ -16,7 +16,7 @@ public class ObstacleCollider : MonoBehaviour
                 break;
 
             case "Finish":
-                //do not blow up
+                LoadNextLevel();
                 break;
                          
             default :
@@ -28,6 +28,19 @@ public class ObstacleCollider : MonoBehaviour
     void LoadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
