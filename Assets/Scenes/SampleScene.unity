@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 1954727111}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Friendly
+  m_TagString: Fuel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,6 +612,10 @@ PrefabInstance:
     - target: {fileID: 2353959118663872907, guid: 0cad788373b05574bb985db465a9bb67, type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353959118663872907, guid: 0cad788373b05574bb985db465a9bb67, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 8635082851924665318, guid: 0cad788373b05574bb985db465a9bb67, type: 3}
       propertyPath: m_RootOrder
@@ -810,7 +814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145719649267373913, guid: 07906dcc7f5684042947de42f44c25dc, type: 3}
       propertyPath: m_TagString
-      value: Obstacle
+      value: Friendly
       objectReference: {fileID: 0}
     - target: {fileID: 5744874745066461602, guid: 07906dcc7f5684042947de42f44c25dc, type: 3}
       propertyPath: m_RootOrder

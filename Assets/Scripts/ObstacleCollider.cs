@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class ObstacleCollider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                //do not blow up
+                break;
+
+            case "Finish":
+                //do not blow up
+                break;
+
+            case "Fuel":
+                //do not blow up
+                break;
+
+            default :
+                //blow up
+                break;
+        }
     }
 }
