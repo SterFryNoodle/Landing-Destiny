@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ObstacleCollider : MonoBehaviour
-{    
+{
+    [SerializeField] float delayTime = 2f;
+
     void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -14,7 +16,7 @@ public class ObstacleCollider : MonoBehaviour
                 break;
 
             case "Finish":
-                LoadNextLevel();
+                NextLevelTransition();
                 break;
                          
             default :
@@ -23,10 +25,15 @@ public class ObstacleCollider : MonoBehaviour
         }
     }
 
+    void NextLevelTransition()
+    {
+        GetComponent<PlayerMovement>().enabled = false;
+        Invoke("LoadNextLevel", delayTime);
+    }
     void StartCrashSequence()
     {
         GetComponent<PlayerMovement>().enabled = false;
-        Invoke("LoadLevel", 2f);
+        Invoke("LoadLevel", delayTime);
     }
     void LoadLevel()
     {
