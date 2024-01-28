@@ -12,6 +12,7 @@ public class ObstacleCollider : MonoBehaviour
 
     AudioSource audioSource;
 
+    bool isTransitioning;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,20 +20,22 @@ public class ObstacleCollider : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (isTransitioning)
+        { 
+            return;        
+        }
+        
         switch (collision.gameObject.tag)
         {
             case "Friendly":
                 //do not blow up
                 break;
 
-            case "Finish":
-                PlayShipLanding();
+            case "Finish":                
                 NextLevelTransition();
                 break;
-                         
-            default :
-                
-                PlayCrashAudio();
+
+            default:
                 StartCrashSequence();
                 break;
         }
@@ -40,11 +43,15 @@ public class ObstacleCollider : MonoBehaviour
 
     void NextLevelTransition()
     {
+        isTransitioning = true;
+        PlayShipLanding();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadNextLevel", delayLevelLoad);
     }
     void StartCrashSequence()
     {
+        isTransitioning = true;
+        PlayCrashAudio();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadLevel", delayTime);
     }
