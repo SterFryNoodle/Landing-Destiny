@@ -18,11 +18,7 @@ public class ObstacleCollider : MonoBehaviour
             case "Finish":
                 //do not blow up
                 break;
-
-            case "Fuel":
-                //do not blow up
-                break;
-
+                         
             default :
                 LoadLevel();
                 break;
