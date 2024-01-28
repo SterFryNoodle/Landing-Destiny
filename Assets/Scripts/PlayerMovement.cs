@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
-    Rigidbody playerRb;
+{    
     [SerializeField] float upwardsThrust = 50f;
     [SerializeField] float rotationThrust = 1.0f;
-    AudioSource audioSource;
+    [SerializeField] AudioClip rocketEngine;
     
+    AudioSource audioSource;
+    Rigidbody playerRb;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!audioSource.isPlaying)
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(rocketEngine);
         }        
     }
 }
