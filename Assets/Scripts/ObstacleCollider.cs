@@ -22,7 +22,7 @@ public class ObstacleCollider : MonoBehaviour
     {
         if (isTransitioning)
         { 
-            return;        
+            return;        // prevents from reaching switch statement if isTransitioning is true.
         }
         
         switch (collision.gameObject.tag)
@@ -44,6 +44,7 @@ public class ObstacleCollider : MonoBehaviour
     void NextLevelTransition()
     {
         isTransitioning = true;
+        audioSource.Stop();
         PlayShipLanding();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadNextLevel", delayLevelLoad);
@@ -51,6 +52,7 @@ public class ObstacleCollider : MonoBehaviour
     void StartCrashSequence()
     {
         isTransitioning = true;
+        audioSource.Stop();
         PlayCrashAudio();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadLevel", delayTime);
