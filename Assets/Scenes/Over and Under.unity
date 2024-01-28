@@ -477,6 +477,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 2
   delayLevelLoad: 6
+  shipExplosion: {fileID: 8300000, guid: ed44b4e504eca084eb89ad6bf7accb2d, type: 3}
+  shipLanding: {fileID: 8300000, guid: b62b119aab16a1e4880147461b2c56ff, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2788269854049208636, guid: d83d3e17571f6e34e840e4f401542e14, type: 3}
+      propertyPath: rocketEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 99524f68017106d4ca91c1d9af75ae10, type: 3}
     - target: {fileID: 3918821238568798336, guid: d83d3e17571f6e34e840e4f401542e14, type: 3}
       propertyPath: m_Name
       value: Player

@@ -7,6 +7,15 @@ public class ObstacleCollider : MonoBehaviour
 {
     [SerializeField] float delayTime = 2f;
     [SerializeField] float delayLevelLoad = 6f;
+    [SerializeField] AudioClip shipExplosion;
+    [SerializeField] AudioClip shipLanding;
+
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -17,10 +26,13 @@ public class ObstacleCollider : MonoBehaviour
                 break;
 
             case "Finish":
+                PlayShipLanding();
                 NextLevelTransition();
                 break;
                          
             default :
+                
+                PlayCrashAudio();
                 StartCrashSequence();
                 break;
         }
@@ -53,5 +65,23 @@ public class ObstacleCollider : MonoBehaviour
             nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    void PlayCrashAudio()
+    {
+        if(!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(shipExplosion);
+        }
+        
+    }
+
+    void PlayShipLanding()
+    {
+        if(!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(shipLanding);
+        }
+        
     }
 }
