@@ -24,7 +24,7 @@ public class ObstacleCollider : MonoBehaviour
                 break;
 
             default :
-                //blow up
+                SceneManager.LoadScene("Level 1");
                 break;
         }
     }
