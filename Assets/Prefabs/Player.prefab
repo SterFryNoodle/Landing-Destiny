@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4849426214615652772}
   - component: {fileID: 7362740603309692484}
   - component: {fileID: 2788269854049208636}
+  - component: {fileID: 6604223022022432251}
   - component: {fileID: 9052086009620228606}
   m_Layer: 0
   m_Name: Player
@@ -35,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3065233938522350792
 MeshFilter:
@@ -149,6 +150,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upwardsThrust: 1000
   rotationThrust: 100
+  rocketEngine: {fileID: 8300000, guid: 99524f68017106d4ca91c1d9af75ae10, type: 3}
+--- !u!114 &6604223022022432251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3918821238568798336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb705dcb6ae9e8a4a84db1ae25cbb508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 2
+  delayLevelLoad: 6
+  shipExplosion: {fileID: 8300000, guid: ed44b4e504eca084eb89ad6bf7accb2d, type: 3}
+  shipLanding: {fileID: 8300000, guid: b62b119aab16a1e4880147461b2c56ff, type: 3}
 --- !u!82 &9052086009620228606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -159,8 +177,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b3901a58dee1d1148aa5faaf0491469e, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
