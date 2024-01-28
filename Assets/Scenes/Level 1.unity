@@ -834,7 +834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145719649267373913, guid: 07906dcc7f5684042947de42f44c25dc, type: 3}
       propertyPath: m_TagString
-      value: Friendly
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 5744874745066461602, guid: 07906dcc7f5684042947de42f44c25dc, type: 3}
       propertyPath: m_RootOrder

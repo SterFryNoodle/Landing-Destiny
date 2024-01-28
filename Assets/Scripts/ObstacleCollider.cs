@@ -31,6 +31,7 @@ public class ObstacleCollider : MonoBehaviour
 
     void LoadLevel()
     {
-        SceneManager.LoadScene(0); //used integer arguement instead of string to increment array value for multiple lvls.
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
