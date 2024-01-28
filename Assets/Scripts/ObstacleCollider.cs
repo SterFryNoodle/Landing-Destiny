@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ObstacleCollider : MonoBehaviour
 {
     [SerializeField] float delayTime = 2f;
+    [SerializeField] float delayLevelLoad = 6f;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -28,7 +29,7 @@ public class ObstacleCollider : MonoBehaviour
     void NextLevelTransition()
     {
         GetComponent<PlayerMovement>().enabled = false;
-        Invoke("LoadNextLevel", delayTime);
+        Invoke("LoadNextLevel", delayLevelLoad);
     }
     void StartCrashSequence()
     {

@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 1
+  delayLevelLoad: 6
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 9052086009620228606, guid: d83d3e17571f6e34e840e4f401542e14, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: b63ba02dc54fe8f49aca398e33636ab9, type: 3}
+      objectReference: {fileID: 8300000, guid: 99524f68017106d4ca91c1d9af75ae10, type: 3}
     - target: {fileID: 9052086009620228606, guid: d83d3e17571f6e34e840e4f401542e14, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
