@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ObstacleCollider : MonoBehaviour
-{
-    
-
+{    
     void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -20,11 +18,16 @@ public class ObstacleCollider : MonoBehaviour
                 break;
                          
             default :
-                LoadLevel();
+                StartCrashSequence();
                 break;
         }
     }
 
+    void StartCrashSequence()
+    {
+        GetComponent<PlayerMovement>().enabled = false;
+        Invoke("LoadLevel", 2f);
+    }
     void LoadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
