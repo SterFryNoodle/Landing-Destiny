@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRb.AddRelativeForce(Time.deltaTime * upwardsThrust * Vector3.up);
             PlayAudio();
+            // Play rocket thruster particle effect here.
         }
         else
         {

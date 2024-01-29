@@ -31,7 +31,7 @@ public class ObstacleCollider : MonoBehaviour
                 //do not blow up
                 break;
 
-            case "Finish":                
+            case "Finish":   
                 NextLevelTransition();
                 break;
 
@@ -45,6 +45,7 @@ public class ObstacleCollider : MonoBehaviour
     {
         isTransitioning = true;
         audioSource.Stop();
+        // Play particle effect here.
         PlayShipLanding();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadNextLevel", delayLevelLoad);
@@ -53,6 +54,7 @@ public class ObstacleCollider : MonoBehaviour
     {
         isTransitioning = true;
         audioSource.Stop();
+        // Play particle effect here.
         PlayCrashAudio();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadLevel", delayTime);
