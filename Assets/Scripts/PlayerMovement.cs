@@ -35,11 +35,12 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRb.AddRelativeForce(Time.deltaTime * upwardsThrust * Vector3.up);
             PlayAudio();
-            mainBooster.Play();
+            PlayParticleFX();
         }
         else
         {
             audioSource.Stop();
+            mainBooster.Stop();
         }
     }
 
@@ -50,14 +51,19 @@ public class PlayerMovement : MonoBehaviour
             playerRb.freezeRotation = true; //freezing rotation to manually rotate.
             transform.Rotate(rotationThrust * Time.deltaTime * Vector3.forward);
             playerRb.freezeRotation = false; //unfreeze so unity physics takes over.
-            leftBooster.Play();
+            PlayLeftBooster();
         }
         else if (Input.GetKey(KeyCode.D))
         {
             playerRb.freezeRotation = true;
             transform.Rotate(rotationThrust * Time.deltaTime * Vector3.back);
             playerRb.freezeRotation = false;
-            rightBooster.Play();
+            PlayRightBooster();
+        }
+        else
+        {
+            leftBooster.Stop(); 
+            rightBooster.Stop();
         }
     }
 
@@ -66,6 +72,30 @@ public class PlayerMovement : MonoBehaviour
         if(!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(rocketEngine);
+        }
+    }
+
+    void PlayParticleFX()
+    {
+        if(!mainBooster.isPlaying)
+        {
+            mainBooster.Play();
+        }
+    }
+
+    void PlayLeftBooster()
+    {
+        if (!leftBooster.isPlaying)
+        {
+            leftBooster.Play();
+        }
+    }
+
+    void PlayRightBooster()
+    {
+        if (!rightBooster.isPlaying)
+        {
+            rightBooster.Play();
         }
     }
 }
