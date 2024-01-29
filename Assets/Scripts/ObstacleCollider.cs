@@ -16,14 +16,20 @@ public class ObstacleCollider : MonoBehaviour
     AudioSource audioSource;
 
     bool isTransitioning;
+    bool isCollisionDisabled;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+    void Update()
+    {
+        DebugKeys();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        if (isTransitioning)
+        if (isTransitioning || isCollisionDisabled)
         { 
             return;        // prevents from reaching switch statement if isTransitioning is true.
         }
@@ -44,6 +50,17 @@ public class ObstacleCollider : MonoBehaviour
         }
     }
 
+    void DebugKeys()
+    { 
+        if (Input.GetKey(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            isCollisionDisabled = !isCollisionDisabled; //Everytime C is pressed, variable is set to opposite value of what it is.
+        }
+    }
     void NextLevelTransition()
     {
         isTransitioning = true;
@@ -51,7 +68,7 @@ public class ObstacleCollider : MonoBehaviour
         levelComplete.Play();
         PlayShipLanding();
         GetComponent<PlayerMovement>().enabled = false;
-        Invoke("LoadNextLevel", delayLevelLoad);
+        Invoke("LoadNextLevel", delayLevelLoad); //invokes delay between levels
     }
     void StartCrashSequence()
     {
@@ -60,7 +77,7 @@ public class ObstacleCollider : MonoBehaviour
         shipCrash.Play();
         PlayCrashAudio();
         GetComponent<PlayerMovement>().enabled = false;
-        Invoke("LoadLevel", delayTime);
+        Invoke("LoadLevel", delayTime); // invokes delay after crash
     }
     void LoadLevel()
     {
@@ -73,7 +90,6 @@ public class ObstacleCollider : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
-
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
             nextSceneIndex = 0;
@@ -87,7 +103,6 @@ public class ObstacleCollider : MonoBehaviour
         {
             audioSource.PlayOneShot(shipExplosion);
         }
-        
     }
 
     void PlayShipLanding()
@@ -96,6 +111,5 @@ public class ObstacleCollider : MonoBehaviour
         {
             audioSource.PlayOneShot(shipLanding);
         }
-        
     }
 }
