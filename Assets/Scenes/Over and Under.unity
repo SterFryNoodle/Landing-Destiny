@@ -187,11 +187,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302413830293016342, guid: 7857539da6ef2974b994c372d78781d3, type: 3}
+      propertyPath: shipCrash
+      value: 
+      objectReference: {fileID: 315071852}
+    - target: {fileID: 4302413830293016342, guid: 7857539da6ef2974b994c372d78781d3, type: 3}
+      propertyPath: levelComplete
+      value: 
+      objectReference: {fileID: 315071853}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7857539da6ef2974b994c372d78781d3, type: 3}
+--- !u!198 &315071852 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3651738651057600253, guid: 7857539da6ef2974b994c372d78781d3, type: 3}
+  m_PrefabInstance: {fileID: 315071851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &315071853 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 178002042114686623, guid: 7857539da6ef2974b994c372d78781d3, type: 3}
+  m_PrefabInstance: {fileID: 315071851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &417898302
 PrefabInstance:
   m_ObjectHideFlags: 0

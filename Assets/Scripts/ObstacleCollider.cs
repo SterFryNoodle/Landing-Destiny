@@ -9,6 +9,8 @@ public class ObstacleCollider : MonoBehaviour
     [SerializeField] float delayLevelLoad = 6f;
     [SerializeField] AudioClip shipExplosion;
     [SerializeField] AudioClip shipLanding;
+    [SerializeField] ParticleSystem levelComplete;
+    [SerializeField] ParticleSystem shipCrash;
 
     AudioSource audioSource;
 
@@ -45,7 +47,7 @@ public class ObstacleCollider : MonoBehaviour
     {
         isTransitioning = true;
         audioSource.Stop();
-        // Play particle effect here.
+        levelComplete.Play();
         PlayShipLanding();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadNextLevel", delayLevelLoad);
@@ -54,7 +56,7 @@ public class ObstacleCollider : MonoBehaviour
     {
         isTransitioning = true;
         audioSource.Stop();
-        // Play particle effect here.
+        shipCrash.Play();
         PlayCrashAudio();
         GetComponent<PlayerMovement>().enabled = false;
         Invoke("LoadLevel", delayTime);
