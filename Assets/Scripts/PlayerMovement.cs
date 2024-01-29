@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float upwardsThrust = 50f;
     [SerializeField] float rotationThrust = 1.0f;
     [SerializeField] AudioClip rocketEngine;
+    [SerializeField] ParticleSystem mainBooster;
+    [SerializeField] ParticleSystem rightBooster;
+    [SerializeField] ParticleSystem leftBooster;
     
     AudioSource audioSource;
     Rigidbody playerRb;
@@ -32,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRb.AddRelativeForce(Time.deltaTime * upwardsThrust * Vector3.up);
             PlayAudio();
-            // Play rocket thruster particle effect here.
+            mainBooster.Play();
         }
         else
         {
@@ -47,12 +50,14 @@ public class PlayerMovement : MonoBehaviour
             playerRb.freezeRotation = true; //freezing rotation to manually rotate.
             transform.Rotate(rotationThrust * Time.deltaTime * Vector3.forward);
             playerRb.freezeRotation = false; //unfreeze so unity physics takes over.
+            leftBooster.Play();
         }
         else if (Input.GetKey(KeyCode.D))
         {
             playerRb.freezeRotation = true;
             transform.Rotate(rotationThrust * Time.deltaTime * Vector3.back);
             playerRb.freezeRotation = false;
+            rightBooster.Play();
         }
     }
 

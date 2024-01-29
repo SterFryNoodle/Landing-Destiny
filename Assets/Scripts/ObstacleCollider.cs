@@ -7,10 +7,11 @@ public class ObstacleCollider : MonoBehaviour
 {
     [SerializeField] float delayTime = 2f;
     [SerializeField] float delayLevelLoad = 6f;
+
     [SerializeField] AudioClip shipExplosion;
     [SerializeField] AudioClip shipLanding;
     [SerializeField] ParticleSystem levelComplete;
-    [SerializeField] ParticleSystem shipCrash;
+    [SerializeField] ParticleSystem shipCrash;    
 
     AudioSource audioSource;
 
