@@ -22,8 +22,8 @@ public class Oscillator : MonoBehaviour
         const float tau = Mathf.PI * 2; // equation to get 2pi.
         
         float rawSinWave = Mathf.Sin(cycles * tau);
-        Debug.Log(rawSinWave);
-        
+
+        movementFactor = (rawSinWave + 1f) / 2f;
         Vector3 offset = movementVector * movementFactor;
         transform.position = startingPos + offset;
     }
