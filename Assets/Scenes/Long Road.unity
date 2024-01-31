@@ -675,8 +675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05803273883d829488f5065822b5b8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 10, y: 0, z: 0}
-  movementFactor: 0.503
+  movementVector: {x: 50, y: 10, z: 0}
+  movementFactor: 0
+  period: 5
 --- !u!4 &1909700888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5744874745066461602, guid: 07906dcc7f5684042947de42f44c25dc, type: 3}
