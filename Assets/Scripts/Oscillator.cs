@@ -18,7 +18,7 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (period > 0) //protects against NaN error.
+        if (period > Mathf.Epsilon) //protects against NaN error; Use Mathf.Epsilon to compare to a "float" number for more accuracy.
         {
             float cycles = Time.time / period; // continually grows over time.
             const float tau = Mathf.PI * 2; // equation to get 2pi.
