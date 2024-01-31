@@ -8,7 +8,8 @@ public class Oscillator : MonoBehaviour
     [SerializeField] Vector3 movementVector;
     [SerializeField][Range(0,1)] float movementFactor; //the range class allows to turn a variable into a slider between
                                                        // a min and max range in the inspector.
-    
+    [SerializeField] float period = 2f;
+
     void Start()
     {
         startingPos = transform.position;
@@ -17,6 +18,12 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float cycles = Time.time / period; 
+        const float tau = Mathf.PI * 2; // equation to get 2pi.
+        
+        float rawSinWave = Mathf.Sin(cycles * tau);
+        Debug.Log(rawSinWave);
+        
         Vector3 offset = movementVector * movementFactor;
         transform.position = startingPos + offset;
     }
