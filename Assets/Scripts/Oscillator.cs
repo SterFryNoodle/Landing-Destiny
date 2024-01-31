@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Oscillator : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Vector3 startingPos;
+    [SerializeField] Vector3 movementVector;
+    [SerializeField] Vector3 movementFactor;
+    
     void Start()
     {
         
