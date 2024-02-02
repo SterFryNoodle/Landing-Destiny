@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17021897, g: 0.10388812, b: 0.046097815, a: 1}
+  m_IndirectSpecularColor: {r: 0.068492524, g: 0.06940664, b: 0.045867145, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -999,7 +999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3241043942930066166, guid: 7857539da6ef2974b994c372d78781d3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3241043942930066166, guid: 7857539da6ef2974b994c372d78781d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1263,8 +1263,9 @@ Transform:
   - {fileID: 603424226}
   - {fileID: 252861146}
   - {fileID: 1344847867}
+  - {fileID: 705507995}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &480239299 stripped
 Transform:
@@ -2119,13 +2120,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
+  m_LocalRotation: {x: 0.46174863, y: -0, z: -0, w: 0.8870109}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 470322425}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
 --- !u!4 &722377369 stripped
 Transform:
@@ -3864,7 +3865,7 @@ Transform:
   - {fileID: 8054406891946437633}
   - {fileID: 1128391996}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1453316727
 PrefabInstance:
@@ -4720,7 +4721,7 @@ Transform:
   - {fileID: 53622291}
   - {fileID: 239319016}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1695804348 stripped
 Transform:

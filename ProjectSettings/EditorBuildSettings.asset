@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Over and Under.unity
     guid: f4292d44655d25e4ea7c1ef50d4efc8d
   - enabled: 1
-    path: Assets/Scenes/Long Road.unity
+    path: Assets/Scenes/The Long Road.unity
     guid: 39d81047044768948bd23758b6d1d611
   m_configObjects: {}
